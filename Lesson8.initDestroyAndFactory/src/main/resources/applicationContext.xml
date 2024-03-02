@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+    <bean id="classicalMusicBean"
+          class="com.almas.spring.ClassicalMusic"
+          init-method="doMyInit"
+     destroy-method="doMyDestroy"
+     factory-method="getClassicalMusic">
+        <!--<constructor-arg value="Neil"/> -->
+    </bean>
+<!--    <bean id="rockMusicBean"-->
+<!--          class="com.almas.spring.RockMusic">-->
+<!--        &lt;!&ndash;<constructor-arg value="Neil"/> &ndash;&gt;-->
+<!--    </bean>-->
+<!--    <bean id="jazzMusicBean"-->
+<!--          class="com.almas.spring.JazzMusic">-->
+<!--        &lt;!&ndash;<constructor-arg value="Neil"/> &ndash;&gt;-->
+<!--    </bean>-->
+
+<!--    <bean id="musicPlayer" class="com.almas.spring.MusicPlayer">-->
+<!--      &lt;!&ndash; <constructor-arg ref="musicBean" /> &ndash;&gt;-->
+<!--      &lt;!&ndash;  <property name="music" ref="musicBean"/> &ndash;&gt;-->
+<!--        <property name="musicList">-->
+<!--            <list>-->
+<!--            <ref bean="classicalMusicBean"></ref>-->
+<!--            <ref bean="jazzMusicBean"></ref>-->
+<!--            <ref bean="rockMusicBean"></ref>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
+
+</beans>
